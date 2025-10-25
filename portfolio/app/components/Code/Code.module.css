@@ -1,0 +1,48 @@
+.query {
+  padding: 10px;
+}
+
+.query code {
+  font-weight: var(--font-weight);
+  background: linear-gradient(to right,
+      var(--main-color) 0%,
+      var(--foreground) 100%);
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  white-space: nowrap;
+}
+
+.l {
+  font-size: 28px;
+}
+
+.m {
+  font-size: 24px;
+}
+
+.s {
+  font-size: 18px;
+}
+
+.query code::after {
+  content: "";
+  position: absolute;
+  background: var(--foreground);
+  top: 0;
+  right: -5px;
+  width: 2px;
+  height: 100%;
+  animation: blink 1.2s infinite forwards;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,160 @@
+.titleWrapper {
+  position: relative;
+  width: 100%;
+  height: 100lvh;
+}
+
+.background {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100lvh;
+  background-image: url("/bg3840.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.bgImage {
+  min-width: 100%;
+  min-height: 100lvh;
+  background-image: url("/bg3840.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100lvh;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.title>* {
+  min-width: 0;
+}
+
+.title h1 {
+  margin: 0;
+  color: transparent;
+  display: inline-block;
+  height: 60px;
+  width: 100%;
+  inline-size: 100%;
+}
+
+.title h1.important {
+  height: auto !important;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right,
+      var(--main-color) 0%,
+      var(--foreground) 100%);
+  opacity: 0.5;
+}
+
+.title .smallerTitle {
+  font-size: 32px;
+  height: auto;
+}
+
+.title .detailTitle {
+  font-size: 24px;
+}
+
+.title>div {
+  display: flex;
+  max-width: 90%;
+  height: 100%;
+  background: linear-gradient(to right,
+      var(--main-color) 0%,
+      var(--foreground) 100%);
+  background-clip: text;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  justify-self: flex-start;
+  gap: 20px;
+}
+
+._wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 90lvh;
+  position: relative;
+}
+
+._wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+
+  opacity: 20%;
+  background: #000000;
+  filter: url(#grainy);
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  background-color: blue;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 10lvh 0;
+  width: 100%;
+  background-color: var(--background);
+}
+
+@media screen and (max-width: 700px) {
+  .title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .title h1 {
+    text-align: center;
+  }
+
+  .title>div {
+    justify-content: flex-start;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+  }
+}
